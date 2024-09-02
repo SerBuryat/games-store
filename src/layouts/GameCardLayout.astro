@@ -1,0 +1,43 @@
+---
+import { Image } from "astro:assets";
+
+import GameCardPopupLayout from "../layouts/GameCardPopupLayout.astro";
+
+const dialog_123 = "dialog_123";
+---
+
+<div class="game-card">
+    <div class="game-card-img">
+        <Image
+            src={"/game-sample.jpg"}
+            alt={"No image :("}
+            width="320"
+            height="400"
+            format="jpg"
+            quality={100}
+        />
+    </div>
+    <div class="game-card-content">
+        <div class="game-card-title">
+            <h1>Underworld Ascendant</h1>
+        </div>
+        <div class="game-card-description">
+            <p>
+                Underworld Ascendant - третье долгожданное продолжение культовой
+                Ultima Underworld в формате экшен-RPG от первого лица.Игрокам
+                предстоит управлять Аватаром - человеком, попавшим в подземный
+                мир Стигийской Бездны, в котором ему предстоит столкнуться с
+                ордами опасных врагов и великими испытаниями.
+            </p>
+        </div>
+        <div>
+            <button class="buy-btn" onclick={`window.${dialog_123}.showModal()`}>
+                Купить Underworld Ascendant
+            </button>
+        </div>
+    </div>
+
+    <GameCardPopupLayout dialog_id=`${dialog_123}`>
+        <p>типа тут "купить игру"</p>
+    </GameCardPopupLayout>
+</div>

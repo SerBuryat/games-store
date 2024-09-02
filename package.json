@@ -10,8 +10,14 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^4.14.5",
     "@astrojs/check": "^0.9.3",
+    "astro": "^4.14.5",
+    "astro-tunnel": "^0.1.6",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.41",
     "typescript": "^5.5.4"
+  },
+  "devDependencies": {
+    "postcss-custom-media": "^11.0.1"
   }
 }
