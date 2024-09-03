@@ -1,0 +1,10 @@
+---
+interface LinkProps {
+    text: string;
+    href: string;
+}
+
+const { text, href } = Astro.props as LinkProps;
+---
+
+<a href={href}> {text} </a>

@@ -6,6 +6,7 @@ body {
     display: flex;
     flex-direction: column;
     background: #141111;
+    margin: 0;
 }
 
 footer {
@@ -89,16 +90,16 @@ header,
     color: rgb(0, 0, 0, .6);
 }
 
-.popup-header-menu-container{
+.popup-header-menu-container {
+    margin: -2%;
     position: absolute;
     list-style: none;
     display: none;
     flex-direction: column;
-    align-items: center;
     top: 0;
     right: 0;
     background-color: rgb(5, 5, 5, .7);
-    max-width: 320px;
+    max-width: 90%;
     min-height: 100vh;
 
     ul {
@@ -129,7 +130,7 @@ header,
     font-weight: 700;
     color: rgba(242, 157, 34, 1);
     border: none;
-	background: none;
+    background: none;
 }
 
 .nav-ham {
@@ -141,7 +142,7 @@ header,
 
     .nav-ham-btn {
         border: none;
-		background: none;
+        background: none;
     }
 }
 
@@ -160,7 +161,7 @@ header,
 }
 
 .game-card {
-    padding-top: 120px;
+    padding-top: 20vh;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -179,6 +180,11 @@ header,
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, .2);
     box-shadow: 0 4px 4px 0px #050505;
+
+    @media (--sm) {
+        width: 300px;
+        height: 360px;
+    }
 }
 
 .game-card-content {
@@ -192,59 +198,66 @@ header,
 }
 
 dialog {
-	padding: 1rem 3rem;
-	background: white;
-	max-width: 400px;
-	padding-top: 2rem;
-	border-radius: 20px;
-	border: 0;
-	box-shadow: 0 5px 30px 0 rgb(0 0 0 / 10%);
-	animation: fadeIn 1s ease both;
-	&::backdrop {
-		animation: fadeIn 1s ease both;
-		background: rgb(255 255 255 / 40%);
-		z-index: 2;
-		backdrop-filter: blur(20px);
-	}
-	.x {
-		filter: grayscale(1);
-		border: none;
-		background: none;
-		position: absolute;
-		top: 15px;
-		right: 10px;
-		transition: ease filter, transform 0.3s;
-		cursor: pointer;
-		transform-origin: center;
-		&:hover {
-			filter: grayscale(0);
-			transform: scale(1.1);
-		}
-	}
-	h2 {
-		font-weight: 600;
-		font-size: 2rem;
-		padding-bottom: 1rem;
-	}
-	p {
-		font-size: 1rem;
-		line-height: 1.3rem;
-		padding: 0.5rem 0;
-		a {
-			&:visited {
-				color: rgb(var(--vs-primary));
-			}
-		}
-	}
+    padding: 1rem 3rem;
+    background: white;
+    max-width: 400px;
+    padding-top: 2rem;
+    border-radius: 20px;
+    border: 0;
+    box-shadow: 0 5px 30px 0 rgb(0 0 0 / 10%);
+    animation: fadeIn 1s ease both;
+
+    &::backdrop {
+        animation: fadeIn 1s ease both;
+        background: rgb(255 255 255 / 40%);
+        z-index: 2;
+        backdrop-filter: blur(20px);
+    }
+
+    .x {
+        filter: grayscale(1);
+        border: none;
+        background: none;
+        position: absolute;
+        top: 15px;
+        right: 10px;
+        transition: ease filter, transform 0.3s;
+        cursor: pointer;
+        transform-origin: center;
+
+        &:hover {
+            filter: grayscale(0);
+            transform: scale(1.1);
+        }
+    }
+
+    h2 {
+        font-weight: 600;
+        font-size: 2rem;
+        padding-bottom: 1rem;
+    }
+
+    p {
+        font-size: 1rem;
+        line-height: 1.3rem;
+        padding: 0.5rem 0;
+
+        a {
+            &:visited {
+                color: rgb(var(--vs-primary));
+            }
+        }
+    }
 }
 
 @keyframes fadeIn {
-	from {
-		opacity: 0;
-	}
-	to {
-		opacity: 1;
-	}
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 .buy-btn {
@@ -253,13 +266,14 @@ dialog {
     letter-spacing: 3px;
     text-transform: uppercase;
     cursor: pointer;
-    padding: 2%;
+    padding: 2vh;
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
     border: none;
     box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, .1);
     color: black;
     background-color: #c7860d;
+    transition: .8s;
 
     &:hover {
         background-color: white;
@@ -270,3 +284,37 @@ dialog {
     }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+.navbar {
+    position: fixed;
+    width: 90%;
+    z-index: 999;
+    margin: 2% 0vh 0vh 5%;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    ul a {
+        color: #fff;
+        text-decoration: none;
+        font-size: clamp(14px, 2vw, 32px);
+        padding: 5px 20px;
+        font-weight: 700;
+        transition: .8s;
+
+        &:hover {
+            color: black;
+        }
+    }
+}
