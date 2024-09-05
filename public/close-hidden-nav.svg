@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- License: MIT. Made by Gitlab: https://gitlab.com/gitlab-org/gitlab-svgs?ref=iconduck.com -->
+<svg
+                width="50px"
+                height="50px"
+                viewBox="0 0 48 48"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <path
+                    d="M41,43a2,2,0,0,1-1.41-.59L5.62,8.44A2,2,0,0,1,8.44,5.62L42.38,39.56A2,2,0,0,1,41,43Z"
+                    fill="#fbbb43"
+                >
+                </path>
+                <path
+                    d="M7,43a2,2,0,0,1-1.41-3.41L39.56,5.62a2,2,0,0,1,2.83,2.83L8.44,42.38A2,2,0,0,1,7,43Z"
+                    fill="#fbbb43"
+                >
+                </path>
+            </svg>

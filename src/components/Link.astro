@@ -2,9 +2,10 @@
 interface LinkProps {
     text: string;
     href: string;
+    classes: string;
 }
 
-const { text, href } = Astro.props as LinkProps;
+const { text, classes, href } = Astro.props as LinkProps;
 ---
 
-<a href={href}> {text} </a>
+<a class={classes} href={href}> {text} </a>

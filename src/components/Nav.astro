@@ -2,24 +2,25 @@
 import { Image } from "astro:assets";
 
 import Link from "./Link.astro";
+import HiddenNav from "./HiddenNav.astro";
 
-interface NavLink {
+export interface NavLink {
     text: string;
     href: string;
 }
 
-interface NavLogo {
+export interface NavLogo {
     src: string;
     width: number;
     height: number;
 }
 
 export interface NavProps {
-    navLinks: NavLink[]
-    logo: NavLogo
+    navLinks: NavLink[];
+    logo: NavLogo;
 }
 
-const {navLinks, logo: image} = Astro.props as NavProps;
+const { navLinks, logo: image } = Astro.props as NavProps;
 ---
 
 <nav>
@@ -37,11 +38,16 @@ const {navLinks, logo: image} = Astro.props as NavProps;
             </a>
             <ul>
                 {
-                    navLinks.map((link : NavLink) => 
-                        <Link text={link.text} href={link.href} />
-                    )
+                    navLinks.map((link: NavLink) => (
+                        <Link
+                            classes="nav-link"
+                            text={link.text}
+                            href={link.href}
+                        />
+                    ))
                 }
             </ul>
+            <HiddenNav {navLinks} />
         </div>
     </div>
 </nav>

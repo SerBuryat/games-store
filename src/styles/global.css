@@ -1,4 +1,4 @@
-@custom-media --sm (width <=480px);
+@custom-media --sm (width <=500px);
 @custom-media --md (width <=960px);
 
 body {
@@ -16,6 +16,10 @@ main {
     justify-content: center;
     align-items: center;
     column-gap: 10%;
+
+    @media (--sm) {
+        margin: 0 5% 0 5%;
+    }
 }
 
 .nav-wrapper {
@@ -31,7 +35,7 @@ main {
         flex-direction: row;
         justify-content: space-between;
 
-        ul a {
+        .nav-link {
             color: #fff;
             text-decoration: none;
             font-size: clamp(14px, 2vw, 32px);
@@ -42,7 +46,68 @@ main {
             &:hover {
                 color: black;
             }
+
+            @media (--sm) {
+                display: none;
+            }
         }
+    }
+}
+
+.hidden-nav-wrapper {
+    display: none;
+
+    @media (--sm) {
+        display: flex;
+    }
+
+    .nav-btn {
+        border: none;
+        background: none;
+    }
+
+    .hidden-nav {
+        display: none;
+        margin: -2%;
+        position: absolute;
+        list-style: none;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        top: 0;
+        right: 0;
+        background-color: rgb(5, 5, 5, .7);
+        max-width: 320px;
+        max-width: 90%;
+        min-height: 100vh;
+
+        .hidden-nav-link {
+            margin: 5px;
+            color: #fbbb43;
+            text-decoration: none;
+            font-size: clamp(18px, 2vw, 32px);
+            padding: 5px 20px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .hidden-nav-links-wrapper {
+            padding: 20px 30px 20px 30px;
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .close-hidden-nav-btn {
+            padding: 15px;
+            font-size: 40px;
+            font-weight: 700;
+            color: rgba(242, 157, 34, 1);
+            border: none;
+            background: none;
+        }
+
     }
 }
 
@@ -180,8 +245,6 @@ dialog {
     }
 
     @media (--sm) {
-        padding: 5%;
-
         .buy-btn-text {
             display: flex;
             flex-direction: column;

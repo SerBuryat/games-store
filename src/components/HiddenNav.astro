@@ -1,0 +1,54 @@
+---
+import { Image } from "astro:assets";
+
+import Link from "./Link.astro";
+import type { NavLink } from "./Nav.astro";
+
+export interface HiddenNavProps {
+    navLinks: NavLink[];
+}
+
+const { navLinks } = Astro.props as HiddenNavProps;
+---
+
+<nav class="hidden-nav-wrapper">
+    <div class="hidden-nav">
+        <button
+            class="close-hidden-nav-btn"
+            onclick="document.querySelector('.hidden-nav').style.display = 'none'"
+        >
+            <Image
+                src="/close-hidden-nav.svg"
+                alt={"No image :("}
+                width="50"
+                height="50"
+                format="svg"
+                quality={100}
+            />
+        </button>
+        <div class="hidden-nav-links-wrapper">
+            {
+                navLinks.map((link: NavLink) => (
+                    <Link
+                        classes="hidden-nav-link"
+                        text={link.text}
+                        href={link.href}
+                    />
+                ))
+            }
+        </div>
+    </div>
+    <button
+        class="nav-btn"
+        onclick="document.querySelector('.hidden-nav').style.display = 'flex'"
+    >
+        <Image
+            src="/nav-btn.svg"
+            alt={"No image :("}
+            width="50"
+            height="50"
+            format="svg"
+            quality={100}
+        />
+    </button>
+</nav>
