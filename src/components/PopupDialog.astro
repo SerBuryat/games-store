@@ -7,8 +7,6 @@ const { dialog_id } = Astro.props;
         <slot>
             <!-- child's content here -->
         </slot>
-        <button class="x" onclick={`window.${dialog_id}.close()`}> 
-            ❌ 
-        </button>
+        <button class="x" onclick={`window.${dialog_id}.close()`}> ❌ </button>
     </div>
 </dialog>

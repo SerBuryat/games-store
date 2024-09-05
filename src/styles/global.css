@@ -9,20 +9,8 @@ body {
     margin: 0;
 }
 
-footer {
-    margin: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 30px;
-    color: #fff;
-    background-color: rgba(114, 110, 110, 0.1);
-    border-radius: 5px;
-    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, .1);
-}
-
 main {
-    margin: 1% 10% 1% 10%;
+    margin: 0 15% 0 15%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -30,119 +18,31 @@ main {
     column-gap: 10%;
 }
 
-header,
-.b-header:before {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-}
+.nav-wrapper {
+    padding-bottom: 20vh;
 
-.header {
-    margin: 2%;
-    position: sticky;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, .1);
-    color: #fff;
-
-    @media (--sm) {
-        border: none;
-        box-shadow: none;
-        background-color: rgba(255, 255, 255, 0);
-    }
-}
-
-.header-logo {
-    padding: 10px;
-    border-radius: 10px;
-    cursor: pointer;
-}
-
-.header-logo:hover {
-    background-color: rgb(0, 0, 0, .6);
-    transition: .5s;
-}
-
-.header-menu-container ul li {
-    list-style: none;
-    display: inline;
-
-    @media (--sm) {
-        visibility: hidden;
-    }
-}
-
-.header-menu-container ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: clamp(14px, 2vw, 32px);
-    padding: 5px 20px;
-    font-weight: 700;
-    transition: 0.5s;
-}
-
-.header-menu-container a:hover {
-    color: rgb(0, 0, 0, .6);
-}
-
-.popup-header-menu-container {
-    margin: -2%;
-    position: absolute;
-    list-style: none;
-    display: none;
-    flex-direction: column;
-    top: 0;
-    right: 0;
-    background-color: rgb(5, 5, 5, .7);
-    max-width: 90%;
-    min-height: 100vh;
-
-    ul {
-        padding: 10px 30px 10px 30px;
-    }
-
-    ul li {
-        list-style: none;
+    .nav {
+        position: fixed;
+        width: 90%;
+        z-index: 999;
+        margin: 2% 0vh 0vh 5%;
+        text-align: center;
         display: flex;
         flex-direction: row;
-    }
+        justify-content: space-between;
 
-    ul li a {
-        margin: 5px;
-        color: #fbbb43;
-        text-decoration: none;
-        font-size: clamp(18px, 2vw, 32px);
-        padding: 5px 20px;
-        font-weight: 700;
-        letter-spacing: 3px;
-        text-transform: uppercase;
-    }
-}
+        ul a {
+            color: #fff;
+            text-decoration: none;
+            font-size: clamp(14px, 2vw, 32px);
+            padding: 5px 20px;
+            font-weight: 700;
+            transition: .5s;
 
-.close-popup-header-menu-container-btn {
-    padding: 15px;
-    font-size: 40px;
-    font-weight: 700;
-    color: rgba(242, 157, 34, 1);
-    border: none;
-    background: none;
-}
-
-.nav-ham {
-    display: none;
-
-    @media (--sm) {
-        display: block;
-    }
-
-    .nav-ham-btn {
-        border: none;
-        background: none;
+            &:hover {
+                color: black;
+            }
+        }
     }
 }
 
@@ -161,7 +61,6 @@ header,
 }
 
 .game-card {
-    padding-top: 20vh;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -178,7 +77,8 @@ header,
 
 .game-card-img img {
     border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, .2);
+    outline: 1px solid rgba(255, 255, 255, .5);
+    outline-offset: -1px;
     box-shadow: 0 4px 4px 0px #050505;
 
     @media (--sm) {
@@ -273,7 +173,7 @@ dialog {
     box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, .1);
     color: black;
     background-color: #c7860d;
-    transition: .8s;
+    transition: .5s;
 
     &:hover {
         background-color: white;
@@ -281,40 +181,22 @@ dialog {
 
     @media (--sm) {
         padding: 5%;
+
+        .buy-btn-text {
+            display: flex;
+            flex-direction: column;
+        }
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-.navbar {
-    position: fixed;
-    width: 90%;
-    z-index: 999;
-    margin: 2% 0vh 0vh 5%;
-    text-align: center;
+footer {
+    margin-top: 10vh;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-
-    ul a {
-        color: #fff;
-        text-decoration: none;
-        font-size: clamp(14px, 2vw, 32px);
-        padding: 5px 20px;
-        font-weight: 700;
-        transition: .8s;
-
-        &:hover {
-            color: black;
-        }
-    }
+    justify-content: center;
+    align-items: center;
+    min-height: 30px;
+    color: #fff;
+    background-color: rgba(114, 110, 110, 0.1);
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, .1);
 }

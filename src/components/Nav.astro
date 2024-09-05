@@ -8,7 +8,7 @@ interface NavLink {
     href: string;
 }
 
-interface NavImage {
+interface NavLogo {
     src: string;
     width: number;
     height: number;
@@ -16,30 +16,32 @@ interface NavImage {
 
 export interface NavProps {
     navLinks: NavLink[]
-    image: NavImage
+    logo: NavLogo
 }
 
-const {navLinks, image} = Astro.props as NavProps;
+const {navLinks, logo: image} = Astro.props as NavProps;
 ---
 
 <nav>
-    <div class="navbar">
-        <a href="/">
-            <Image
-                src={image.src}
-                alt={"No image :("}
-                width={image.width}
-                height={image.height}
-                format="jpg"
-                quality={100}
-            />
-        </a>
-        <ul>
-            {
-                navLinks.map((link : NavLink) => 
-                    <Link text={link.text} href={link.href} />
-                )
-            }
-        </ul>
+    <div class="nav-wrapper">
+        <div class="nav">
+            <a href="/">
+                <Image
+                    src={image.src}
+                    alt={"No image :("}
+                    width={image.width}
+                    height={image.height}
+                    format="jpg"
+                    quality={100}
+                />
+            </a>
+            <ul>
+                {
+                    navLinks.map((link : NavLink) => 
+                        <Link text={link.text} href={link.href} />
+                    )
+                }
+            </ul>
+        </div>
     </div>
 </nav>

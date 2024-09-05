@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets";
 
-import GameCardPopupLayout from "../layouts/GameCardPopupLayout.astro";
+import PopupDialog from "../components/PopupDialog.astro";
 
 const dialog_123 = "dialog_123";
 ---
@@ -31,13 +31,19 @@ const dialog_123 = "dialog_123";
             </p>
         </div>
         <div>
-            <button class="buy-btn" onclick={`window.${dialog_123}.showModal()`}>
-                Купить Underworld Ascendant
+            <button
+                class="buy-btn"
+                onclick={`window.${dialog_123}.showModal()`}
+            >
+                <div class="buy-btn-text">
+                    <span>Купить</span>
+                    <span>Underworld Ascendant</span>
+                </div>
             </button>
         </div>
     </div>
 
-    <GameCardPopupLayout dialog_id=`${dialog_123}`>
+    <PopupDialog dialog_id=`${dialog_123}`>
         <p>типа тут "купить игру"</p>
-    </GameCardPopupLayout>
+    </PopupDialog>
 </div>
