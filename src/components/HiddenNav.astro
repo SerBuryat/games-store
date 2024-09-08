@@ -30,7 +30,7 @@ const { navLinks } = Astro.props as HiddenNavProps;
             {
                 navLinks.map((link: NavLink) => (
                     <Link
-                        classes="hidden-nav-link"
+                        classes={["hidden-nav-link"]}
                         text={link.text}
                         href={link.href}
                     />

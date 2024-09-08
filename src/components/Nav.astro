@@ -17,30 +17,34 @@ export interface NavLogo {
 
 export interface NavProps {
     navLinks: NavLink[];
-    logo: NavLogo;
+    logo?: NavLogo;
 }
 
-const { navLinks, logo: image } = Astro.props as NavProps;
+const { navLinks, logo: logo } = Astro.props as NavProps;
 ---
 
 <nav>
     <div class="nav-wrapper">
         <div class="nav">
-            <a href="/">
-                <Image
-                    src={image.src}
-                    alt={"No image :("}
-                    width={image.width}
-                    height={image.height}
-                    format="jpg"
-                    quality={100}
-                />
-            </a>
+            {
+                logo && (
+                    <a href="/">
+                        <Image
+                            src={logo.src}
+                            alt={"No image :("}
+                            width={logo.width}
+                            height={logo.height}
+                            format="jpg"
+                            quality={100}
+                        />
+                    </a>
+                )
+            }
             <ul>
                 {
                     navLinks.map((link: NavLink) => (
                         <Link
-                            classes="nav-link"
+                            classes={["nav-link"]}
                             text={link.text}
                             href={link.href}
                         />

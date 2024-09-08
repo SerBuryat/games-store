@@ -22,95 +22,6 @@ main {
     }
 }
 
-.nav-wrapper {
-    padding-bottom: 20vh;
-
-    .nav {
-        position: fixed;
-        width: 90%;
-        z-index: 999;
-        margin: 2% 0vh 0vh 5%;
-        text-align: center;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-
-        .nav-link {
-            color: #fff;
-            text-decoration: none;
-            font-size: clamp(14px, 2vw, 32px);
-            padding: 5px 20px;
-            font-weight: 700;
-            transition: .5s;
-
-            &:hover {
-                color: black;
-            }
-
-            @media (--sm) {
-                display: none;
-            }
-        }
-    }
-}
-
-.hidden-nav-wrapper {
-    display: none;
-
-    @media (--sm) {
-        display: flex;
-    }
-
-    .nav-btn {
-        border: none;
-        background: none;
-    }
-
-    .hidden-nav {
-        display: none;
-        margin: -2%;
-        position: absolute;
-        list-style: none;
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        top: 0;
-        right: 0;
-        background-color: rgb(5, 5, 5, .7);
-        max-width: 320px;
-        max-width: 90%;
-        min-height: 100vh;
-
-        .hidden-nav-link {
-            margin: 5px;
-            color: #fbbb43;
-            text-decoration: none;
-            font-size: clamp(18px, 2vw, 32px);
-            padding: 5px 20px;
-            font-weight: 700;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-        }
-
-        .hidden-nav-links-wrapper {
-            padding: 20px 30px 20px 30px;
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .close-hidden-nav-btn {
-            padding: 15px;
-            font-size: 40px;
-            font-weight: 700;
-            color: rgba(242, 157, 34, 1);
-            border: none;
-            background: none;
-        }
-
-    }
-}
-
 .content-background {
     background: linear-gradient(180deg, rgba(242, 157, 34, 1) 0%, rgba(0, 0, 0, 0) 100%);
     background-repeat: no-repeat;
@@ -144,7 +55,7 @@ main {
     border-radius: 10px;
     outline: 1px solid rgba(255, 255, 255, .5);
     outline-offset: -1px;
-    box-shadow: 0 4px 4px 0px #050505;
+    box-shadow: 0 1px px 0px #050505;
 
     @media (--sm) {
         width: 300px;
