@@ -1,9 +1,7 @@
 ---
 import { Image } from "astro:assets";
 
-import PopupDialog from "../components/PopupDialog.astro";
-
-const dialog_123 = "dialog_123";
+import Modal from "../components/ModalWindow.astro";
 ---
 
 <div class="game-card">
@@ -31,19 +29,15 @@ const dialog_123 = "dialog_123";
             </p>
         </div>
         <div>
-            <button
-                class="buy-btn"
-                onclick={`window.${dialog_123}.showModal()`}
-            >
-                <div class="buy-btn-text">
+            <Modal>
+                <div slot="modal-content">
+                    <p>типа тут "купить игру"</p>
+                </div>
+                <div class="buy-btn" slot="open-modal-btn">
                     <span>Купить</span>
                     <span>Underworld Ascendant</span>
                 </div>
-            </button>
+            </Modal>
         </div>
     </div>
-
-    <PopupDialog dialog_id=`${dialog_123}`>
-        <p>типа тут "купить игру"</p>
-    </PopupDialog>
 </div>

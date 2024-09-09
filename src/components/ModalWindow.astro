@@ -1,0 +1,18 @@
+---
+import "../styles/components/modal-window.css";
+
+const modal_id = "custom_modal_id";
+---
+
+<dialog id={`${modal_id}`} class="modal-window">
+    <slot name="modal-content">
+        <!-- modal content here -->
+    </slot>
+    <button class="close-modal-btn" onclick={`window.${modal_id}.close()`}> ❌ </button>
+</dialog>
+
+<a onclick={`window.${modal_id}.showModal()`}>
+    <slot name="open-modal-btn">
+        <!-- close button content here-->
+    </slot>
+</a>
