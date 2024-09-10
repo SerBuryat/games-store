@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.3",
+    "@astrojs/mdx": "^3.1.5",
     "astro": "^4.14.5",
     "astro-tunnel": "^0.1.6",
     "autoprefixer": "^10.4.20",

@@ -1,12 +1,22 @@
 @custom-media --sm (width <=500px);
 @custom-media --md (width <=960px);
 
+*:disabled {
+    background-color: dimgrey;
+    color: linen;
+    opacity: 1;
+  }
+
 body {
     font-family: 'M PLUS Rounded 1c', sans-serif;
     display: flex;
     flex-direction: column;
     background: #141111;
     margin: 0;
+
+    h1 {
+        color: white;
+    }
 }
 
 main {
@@ -22,15 +32,15 @@ main {
     }
 }
 
-.content-background {
-    background: linear-gradient(180deg, rgba(242, 157, 34, 1) 0%, rgba(0, 0, 0, 0) 100%);
+.game-card-background {
+    background: linear-gradient(180deg, rgb(175, 112, 24) 0%, rgba(0, 0, 0, 0) 100%);
     background-repeat: no-repeat;
     position: absolute;
     left: 0;
     width: 100vw;
     top: 0;
     height: 100vh;
-    max-height: 737px;
+    max-height: 700px;
     z-index: -1;
     overflow: hidden;
     transition: .3s;
@@ -42,35 +52,38 @@ main {
     justify-content: center;
     gap: 5vh;
 
+    .game-card-img {
+        align-self: center;
+    }
+    
+    .game-card-img img {
+        border-radius: 10px;
+        outline: 1px solid rgba(255, 255, 255, 0.5);
+        outline-offset: -1px;
+        box-shadow: 0 1px px 0px #050505;
+    
+        @media (--sm) {
+            width: 300px;
+            height: 360px;
+        }
+    }
+    
+    .game-card-content {
+        color: #fff;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 30px;
+
+        h1 {
+            text-transform: uppercase;
+        }
+    }
+
     @media (--md) {
         flex-direction: column;
     }
-}
-
-.game-card-img {
-    align-self: center;
-}
-
-.game-card-img img {
-    border-radius: 10px;
-    outline: 1px solid rgba(255, 255, 255, .5);
-    outline-offset: -1px;
-    box-shadow: 0 1px px 0px #050505;
-
-    @media (--sm) {
-        width: 300px;
-        height: 360px;
-    }
-}
-
-.game-card-content {
-    text-transform: uppercase;
-    color: #fff;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 30px;
 }
 
 @keyframes fadeIn {

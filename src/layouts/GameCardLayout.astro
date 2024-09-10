@@ -2,42 +2,61 @@
 import { Image } from "astro:assets";
 
 import Modal from "../components/ModalWindow.astro";
+import MainLayout from "./MainLayout.astro";
+
+const { frontmatter } = Astro.props;
+
+const { title, image, description, style } = frontmatter;
 ---
 
-<div class="game-card">
-    <div class="game-card-img">
-        <Image
-            src={"/game-sample.jpg"}
-            alt={"No image :("}
-            width="400"
-            height="500"
-            format="jpg"
-            quality={100}
-        />
-    </div>
-    <div class="game-card-content">
-        <div class="game-card-title">
-            <h1>Underworld Ascendant</h1>
-        </div>
-        <div class="game-card-description">
-            <p>
-                Underworld Ascendant - третье долгожданное продолжение культовой
-                Ultima Underworld в формате экшен-RPG от первого лица.Игрокам
-                предстоит управлять Аватаром - человеком, попавшим в подземный
-                мир Стигийской Бездны, в котором ему предстоит столкнуться с
-                ордами опасных врагов и великими испытаниями.
-            </p>
-        </div>
-        <div>
-            <Modal>
-                <div slot="modal-content">
-                    <p>типа тут "купить игру"</p>
+<game-card-layout data-message={style.background}>
+    <MainLayout {title} {description}>
+        <div id="game-card-background" class="game-card-background"></div>
+        <div class="game-card">
+            <div class="game-card-img">
+                <Image
+                    src={image.src}
+                    alt={image.alt}
+                    width="400"
+                    height="500"
+                    format="jpg"
+                    quality={100}
+                />
+            </div>
+            <div class="game-card-content">
+                <div class="game-card-title">
+                    <h1>{title}</h1>
                 </div>
-                <div class="buy-btn" slot="open-modal-btn">
-                    <span>Купить</span>
-                    <span>Underworld Ascendant</span>
+                <div class="game-card-description">
+                    <slot />
                 </div>
-            </Modal>
+                <div>
+                    <Modal>
+                        <div slot="modal-content">
+                            <p>купить игру "{title}"</p>
+                        </div>
+                        <div class="buy-btn" slot="open-modal-btn">
+                            <span>Купить</span>
+                            <span>{title}</span>
+                        </div>
+                    </Modal>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
+    </MainLayout>
+</game-card-layout>
+
+<script>
+import getGameBackgroundColor from "../util/colors";
+
+    class GameCardLayout extends HTMLElement {
+        connectedCallback() {
+            const back = document.getElementById("game-card-background");
+            const background = this.dataset.message;
+            // @ts-ignore 
+            back.style.background = getGameBackgroundColor(background);
+        }
+    }
+
+    customElements.define("game-card-layout", GameCardLayout);
+</script>

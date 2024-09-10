@@ -1,3 +1,6 @@
+@custom-media --sm (width <=500px);
+@custom-media --md (width <=960px);
+
 .modal-window {
     padding: 1rem 3rem;
     background: white;
