@@ -1,4 +1,30 @@
 ---
+import { Image } from "astro:assets";
 
+const allGames = await Astro.glob("../pages/games/*.md");
 ---
 
+<div class="games-collection">
+    {
+        allGames.map((game) => (
+            <div class="games-collection-card">
+                <Image
+                    src={game.frontmatter.image.src}
+                    alt={game.frontmatter.image.alt}
+                    width="400"
+                    height="500"
+                    format="jpg"
+                    quality={100}
+                />
+                <div class="games-collection-card-text">
+                    <p> {game.frontmatter.description} </p>
+                </div>
+                <div class="games-collection-card-content">
+                    <h3>
+                        <a href={game.url}>{game.frontmatter.title}</a>
+                    </h3>
+                </div>
+            </div>
+        ))
+    }
+</div>

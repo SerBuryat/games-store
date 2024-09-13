@@ -8,15 +8,12 @@
 }
 
 body {
+    color: white;
     font-family: 'M PLUS Rounded 1c', sans-serif;
     display: flex;
     flex-direction: column;
     background: #141111;
     margin: 0;
-
-    h1 {
-        color: white;
-    }
 }
 
 main {
@@ -66,7 +63,6 @@ main {
     }
 
     .game-card-content {
-        color: #fff;
         text-align: center;
         display: flex;
         flex-direction: column;
@@ -118,13 +114,79 @@ main {
     }
 }
 
+.games-collection {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    scrollbar-color: rgb(94, 92, 92) rgb(48, 47, 45);
+    scrollbar-width: thin;
+    max-width: 90%;
+    gap: 30px;
+    padding: 20px;
+
+    @media (--md) {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+    }
+
+    .games-collection-card {
+        position: relative;
+        justify-content: center;
+        text-align: center;
+        border-radius: 10px;
+        outline: 1px solid rgba(255, 255, 255, 0.5);
+        outline-offset: -1px;
+        box-shadow: 0 1px px 0px #050505;
+
+        &:hover .games-collection-card-text {
+            display: flex;
+            background-color: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(5px);
+            border-radius: 20px;
+        }
+    }
+
+    a {
+        text-decoration: none;
+        color: white;
+    }
+
+    .games-collection-card-text {
+        display: none;
+        position: absolute;
+        top: 30%;
+        font-size: 20px;
+        width: 90%;
+        min-height: 150px;
+        padding: 15px;
+
+        @media (--sm) {
+            font-size: 14px;
+        }
+    }
+
+    .games-collection-card img {
+        width: 280px;
+        height: 320px;
+        -webkit-mask: url(/images/cardshadow.png) top left / contain;
+
+        @media (--sm) {
+            width: 200px;
+            height: 240px;
+        }
+    }
+
+    .games-collection-card-content {
+        text-align: center;
+    }
+}
+
 footer {
     margin-top: 10vh;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 30px;
-    color: #fff;
     background-color: rgba(114, 110, 110, 0.1);
     border-radius: 5px;
     box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, .1);

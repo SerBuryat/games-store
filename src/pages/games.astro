@@ -1,14 +1,9 @@
 ---
+import GamesCollection from "../components/GamesCollection.astro";
 import MainLayout from "../layouts/MainLayout.astro";
-
-import Counter from "../components/Counter.jsx";
-const someProps = {
-	count: 1,
-};
 ---
 
 <MainLayout>
-    <Counter {...someProps} client:visible>
-        <h1>Hello, React!</h1>
-    </Counter>
+        <h1>Games</h1>
+        <GamesCollection />
 </MainLayout>

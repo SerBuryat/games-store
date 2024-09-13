@@ -7,9 +7,9 @@ image: {
   src: "/images/dark-souls/main.jpg",
   alt: "A picture of a game",
 }
-description: Игра, в которой вам придется умерать снова и снова...
+description: Вам придется умерать снова и снова...
 draft: false
-category: Action RPG Souls-like
+category: Action-RPG Souls-like
 style: {
   # https://coolors.co/image-picker
   background: "#4D575D"

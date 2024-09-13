@@ -7,12 +7,12 @@ image: {
   src: "/images/underworld-ascendant/main.jpg",
   alt: "A picture of a game",
 }
-description: Третье долгожданное продолжение культовой Ultima Underworld в формате экшен-RPG от первого лица
+description: Попробуйте пройти все испытания и выбраться из Стигийской Бездны
 draft: false
 category: RPG Roguelike
 style: {
   # https://coolors.co/image-picker
-  background: "#8C2016"
+  background: "#6B545E"
 }
 ---
 

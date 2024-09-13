@@ -7,7 +7,7 @@ image: {
   src: "/images/minecraft/main.jpg",
   alt: "A picture of a game",
 }
-description:  Легендарная компьютерная инди-игра в жанре песочницы
+description:  Постройте всё... или почти всё
 draft: false
 category: Survival Sandbox
 style: {
