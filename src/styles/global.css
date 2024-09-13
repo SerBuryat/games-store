@@ -5,7 +5,7 @@
     background-color: dimgrey;
     color: linen;
     opacity: 1;
-  }
+}
 
 body {
     font-family: 'M PLUS Rounded 1c', sans-serif;
@@ -36,10 +36,7 @@ main {
     background: linear-gradient(180deg, rgb(175, 112, 24) 0%, rgba(0, 0, 0, 0) 100%);
     background-repeat: no-repeat;
     position: absolute;
-    left: 0;
-    width: 100vw;
-    top: 0;
-    height: 100vh;
+    inset: 0;
     max-height: 700px;
     z-index: -1;
     overflow: hidden;
@@ -55,19 +52,19 @@ main {
     .game-card-img {
         align-self: center;
     }
-    
+
     .game-card-img img {
         border-radius: 10px;
         outline: 1px solid rgba(255, 255, 255, 0.5);
         outline-offset: -1px;
         box-shadow: 0 1px px 0px #050505;
-    
+
         @media (--sm) {
             width: 300px;
             height: 360px;
         }
     }
-    
+
     .game-card-content {
         color: #fff;
         text-align: center;
@@ -78,6 +75,11 @@ main {
 
         h1 {
             text-transform: uppercase;
+        }
+
+        p {
+            text-align: justify;
+            font-weight: 500;
         }
     }
 

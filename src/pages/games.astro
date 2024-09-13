@@ -1,7 +1,14 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
+
+import Counter from "../components/Counter.jsx";
+const someProps = {
+	count: 1,
+};
 ---
 
 <MainLayout>
-    <h1>Games here soon...</h1>
+    <Counter {...someProps} client:visible>
+        <h1>Hello, React!</h1>
+    </Counter>
 </MainLayout>

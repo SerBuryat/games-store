@@ -11,6 +11,7 @@ description:  Легендарная компьютерная инди-игра 
 draft: false
 category: Survival Sandbox
 style: {
+  # https://coolors.co/image-picker
   background: "#2A2F8C"
 }
 ---

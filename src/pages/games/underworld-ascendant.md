@@ -11,6 +11,7 @@ description: Третье долгожданное продолжение кул
 draft: false
 category: RPG Roguelike
 style: {
+  # https://coolors.co/image-picker
   background: "#8C2016"
 }
 ---

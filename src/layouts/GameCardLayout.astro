@@ -47,13 +47,13 @@ const { title, image, description, style } = frontmatter;
 </game-card-layout>
 
 <script>
-import getGameBackgroundColor from "../util/colors";
+    import getGameBackgroundColor from "../util/colors";
 
     class GameCardLayout extends HTMLElement {
         connectedCallback() {
             const back = document.getElementById("game-card-background");
             const background = this.dataset.message;
-            // @ts-ignore 
+            // @ts-ignore
             back.style.background = getGameBackgroundColor(background);
         }
     }
