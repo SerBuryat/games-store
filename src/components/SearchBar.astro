@@ -1,0 +1,7 @@
+---
+import Search from "../components/Search.jsx";
+
+const games = await Astro.glob("../pages/games/*.md");
+---
+
+<Search client:load {games} />

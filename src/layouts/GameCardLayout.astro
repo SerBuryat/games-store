@@ -30,7 +30,7 @@ const { title, image, description, style } = frontmatter;
                 <div class="game-card-description">
                     <slot />
                 </div>
-                <div>
+                <div class="modal-wrapper">
                     <Modal>
                         <div slot="modal-content">
                             <p>купить игру "{title}"</p>
@@ -46,6 +46,8 @@ const { title, image, description, style } = frontmatter;
     </MainLayout>
 </game-card-layout>
 
+<!-- через такой скрипт можно создать кастомный астро элемент/компонент 
+    и передать туда props из frontmatter -->
 <script>
     import getGameBackgroundColor from "../util/colors";
 
@@ -58,5 +60,7 @@ const { title, image, description, style } = frontmatter;
         }
     }
 
+    // определяем имя кастомного элемента и используем его выше, 
+    // как астро компонент
     customElements.define("game-card-layout", GameCardLayout);
 </script>

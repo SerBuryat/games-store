@@ -3,8 +3,8 @@ import type { NavProps } from "../components/Nav.astro";
 const navData : NavProps = {
 	navLinks: [
 		{ text: "Games", href: "/games/" },
+		{ text: "Search", href: "/search/" },
 		{ text: "Profile", href: "/" },
-		{ text: "About us", href: "/" },
 	],
 	logo: {
 		src: "/games-store-logo-removebg-preview.png",

@@ -9,7 +9,7 @@ image: {
 }
 description: Вам придется умерать снова и снова...
 draft: false
-category: Action-RPG Souls-like
+category: Action RPG Soulslike
 style: {
   # https://coolors.co/image-picker
   background: "#4D575D"

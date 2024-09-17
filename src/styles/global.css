@@ -71,6 +71,8 @@ main {
 
         h1 {
             text-transform: uppercase;
+            font-weight: 700;
+            font-size: 32px;
         }
 
         p {
@@ -94,7 +96,17 @@ main {
     }
 }
 
+.modal-wrapper {
+    width: 500px;
+    align-self: center;
+
+    @media (--md) {
+        width: 300px;
+    }
+}
+
 .buy-btn {
+    justify-self: center;
     font-family: 'M PLUS Rounded 1c', sans-serif;
     font-weight: 500;
     letter-spacing: 3px;
